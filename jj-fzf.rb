@@ -11,8 +11,12 @@ class JjFzf < Formula
   depends_on "fzf" => :install
   depends_on "pandoc" => :build
 
+  def build
+    system "make", "all"
+  end
+
   def install
-    system "make", "all", "install", "DESTDIR=#{prefix}"    
+    system "cp", "./jj-fzf", bin
   end
 
   test do
