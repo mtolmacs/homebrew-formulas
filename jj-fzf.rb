@@ -1,22 +1,17 @@
 class JjFzf < Formula
-  desc "FZF-based TUI for JJ VCS"
+  desc "Text UI for Jujutsu based on fzf"
   homepage "https://github.com/tim-janik/jj-fzf"
   url "https://github.com/tim-janik/jj-fzf/releases/download/v0.32.0/jj-fzf-0.32.0.tar.zst"
   sha256 "73acac52b523376bfe580a7b9f00245856cb8da0d23f104dfd8dfab56792d202"
-  license "MPL 2.0"
+  license "MPL-2.0"
 
-  # depends_on "cmake" => :build
-  # depends_on "ninja" => :build
-  depends_on "jj" => :install
-  depends_on "fzf" => :install
   depends_on "pandoc" => :build
-
-  def build
-    system "make", "all"
-  end
+  depends_on "fzf" => :install
+  depends_on "jj" => :install
 
   def install
-    system "cp", "./jj-fzf", bin
+    system "make", "all"
+    cp "./jj-fzf", bin
   end
 
   test do
