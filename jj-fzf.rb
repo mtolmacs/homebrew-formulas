@@ -11,7 +11,7 @@ class JjFzf < Formula
 
   def install
     system "make", "all"
-    cp "./jj-fzf", bin
+    cp "./jj-fzf", prefix
   end
 
   test do
