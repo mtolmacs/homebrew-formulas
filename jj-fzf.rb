@@ -1,4 +1,4 @@
-class HermesEngine < Formula
+class "jj-fzf" < Formula
   desc "FZF-based TUI for JJ VCS"
   homepage "https://github.com/tim-janik/jj-fzf"
   url "https://github.com/tim-janik/jj-fzf/releases/download/v0.32.0/jj-fzf-0.32.0.tar.zst"
