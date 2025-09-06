@@ -7,8 +7,9 @@ class JjFzf < Formula
 
   # depends_on "cmake" => :build
   # depends_on "ninja" => :build
-  depends_on "jj" => :build 
-  depends_on "fzf" => :build
+  depends_on "jj" => :install
+  depends_on "fzf" => :install
+  depends_on "pandoc" => :build
 
   def install
     system "make", "all", "install", "DESTDIR=#{prefix}"    
